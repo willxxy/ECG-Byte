@@ -1,0 +1,1 @@
+python analysis/token_distribution.py --tokenizer=tokenizer_4500_100_mimic2 --list_of_paths=./data/seg_ecg_qa_ptb_2000/ecg/train/*.npy
