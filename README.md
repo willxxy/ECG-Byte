@@ -306,3 +306,18 @@ We thank Wenhao Ding, Haohong Lin, Shiqi Liu, and Hyoeun Kang for the valuable d
 We thank the authors of [MERL](https://github.com/cheliu-computation/MERL-ICML2024) for their ResNet code and the authors of [ECG-QA](https://github.com/Jwoo5/ecg-qa), and [ECG-Chat](https://github.com/YubaoZhao/ECG-Chat) for their publicly released datasets.
 
 Lastly, we thank [HuggingFace](https://huggingface.co/) for providing the APIs for the models.
+
+## Citations
+If this work has helped you please cite the following:
+
+```
+@misc{han2024ecgbytetokenizerendtoendgenerative,
+      title={ECG-Byte: A Tokenizer for End-to-End Generative Electrocardiogram Language Modeling}, 
+      author={William Han and Chaojing Duan and Michael A. Rosenberg and Emerson Liu and Ding Zhao},
+      year={2024},
+      eprint={2412.14373},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2412.14373}, 
+}
+```
