@@ -23,7 +23,7 @@
 6. [Acknowledgements](#ack)
 
 ## Overview <a name="overview"></a>
-This repository is the official implementation of [ECG-Byte: A Tokenizer for End-to-End Generative Electrocardiogram Language Modeling](./assets/ECG-Byte.pdf)
+This repository is the official implementation of [ECG-Byte: A Tokenizer for End-to-End Generative Electrocardiogram Language Modeling](https://arxiv.org/abs/2412.14373)
 by [William Jongwon Han](https://willxxy.github.io/), [Choajing Duan](https://www.linkedin.com/in/chaojing-duan-0b3266127), [Michael A. Rosenberg](https://scholar.google.com/citations?user=o0Y0GLcAAAAJ&hl=en), [Emerson Liu](https://www.linkedin.com/in/emerson-liu-950479/), and [Ding Zhao](https://www.meche.engineering.cmu.edu/directory/bios/zhao-ding.html).
 
 Please carefully read the below documentations to run the pipeline. If there are any questions or bugs, please do not hesitate to reach out to wjhan{@}andrew{dot}cmu{edu} or submit an issue with corresponding details.
