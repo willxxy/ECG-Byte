@@ -7,11 +7,6 @@ import glob
 import re
 import random
 
-def load_vocab_and_merges(filename):
-    with open(filename, 'rb') as f:
-        vocab, merges = pickle.load(f)
-    return vocab, merges
-
 def ensure_directory_exists(directory_path):
     try:
         os.makedirs(directory_path, exist_ok=True)
