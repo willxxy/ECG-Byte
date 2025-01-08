@@ -77,19 +77,19 @@ We provide the functions that are utilzed throughout the codebase in the followi
 
 6. `pip install torch==2.3.1 torchvision==0.18.1 torchaudio==2.3.1 --index-url https://download.pytorch.org/whl/cu118`
 
-7. Please `cd` into the `transformers` directory and `pip install -e .`.
+7. Please `cd` into the `ECG-Byte/transformers` directory and `pip install -e .`.
 
 8. Now `cd ../` and `pip install -e .`
 
-9. Run the `ecg_byte/test/test_gpu.py` to ensure you are able to use your GPU.
+9. Run the `ECG-Byte/test/test_gpu.py` to ensure you are able to use your GPU.
 
-10. Run the `ecg_byte/test/test_transformers.py` to ensure you properly installed the `transformers` package.
+10. Run the `ECG-Byte/test/test_transformers.py` to ensure you properly installed the `transformers` package.
 
-11. `cd` into `ecg_byte/ecg_byte/rust_bpe` and execute `maturin develop --release` to compile the tokenizer.
+11. `cd` into `ECG-Byte/ecg_byte/rust_bpe` and execute `maturin develop --release` to compile the tokenizer.
 
 12. Another consideration is that we use ***gated*** models (e.g., Llama 3.2, Gemma) from HuggingFace, therefore you will need to get an api key and log into it via `huggingface-cli login` in the terminal. We also require you to log in inside the main training *.py file via the login function `from huggingface_hub import login`.
 
-NOTE: From now, all instructions will assume you are working from the `ecg_byte/ecg_byte` directory.
+NOTE: From now, all instructions will assume you are working from the `ECG-Byte/ecg_byte` directory.
 
 ## Data <a name="data"></a>
 
