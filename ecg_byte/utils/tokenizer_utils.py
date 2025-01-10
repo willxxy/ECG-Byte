@@ -44,6 +44,15 @@ def analyze_token_distribution(test_data, merges, percentiles, num_workers=None)
     
     return token_counts, token_lengths
 
+def analyze_single_ecg(args):
+    path, merges, percentiles = args
+    signal = np.load(path)
+    _, norm_signal = normalize_all(signal, percentiles)
+    single_lead_str = ''.join(norm_signal.flatten())
+    all_encoded_ids = encode_text(single_lead_str, merges)
+    all_encoded_ids = list(all_encoded_ids)
+    return Counter(all_encoded_ids), len(all_encoded_ids)
+
 def process_ecg(ecg, percentiles):
     ecg = load_npy(ecg)
     _, symbol_signal = normalize_all(ecg, percentiles)
