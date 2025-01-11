@@ -114,7 +114,17 @@ However, if you have enough compute, feel free to modify to run the pipeline wit
 
 `git clone https://github.com/Jwoo5/ecg-qa.git`
 
-2. We exactly follow the instructions in [this section of the repository](https://github.com/Jwoo5/ecg-qa?tab=readme-ov-file#usage-notes) for mapping the PTB-XL and MIMIC IV ECG dataset to the question and answers, thus we encourage you to do so as well. If there are any troubles, please do not hesitate to submit an issue in this repository or theirs.
+2. We exactly follow the instructions in [this section of the repository](https://github.com/Jwoo5/ecg-qa?tab=readme-ov-file#usage-notes) for mapping the PTB-XL and MIMIC IV ECG dataset to the question and answers. `cd` into ecg-qa and execute the following commands in the terminal to prepare the ECG-QA dataset.
+
+```
+python mapping_ptbxl_samples.py ecgqa/ptbxl \
+--ptbxl-data-dir ../ptb
+```
+
+```
+python mapping_mimic_iv_ecg_samples.py ecgqa/mimic-iv-ecg \
+--mimic-iv-ecg-data-dir ../mimic
+```
 
 3. After mapping the datasets, you should have an output folder in the `data/ecg-qa` folder with the mapped `paraphrased` and `template` question and answers.
 
