@@ -36,7 +36,6 @@ def get_args():
     parser.add_argument('--eps', type = float, default = 1e-8, help='Please choose epsilon for optimizer')
     parser.add_argument('--warmup', type = int, default = 500, help = 'Please choose the number of warmup steps for the optimizer' )
     parser.add_argument('--weight_decay', type = float, default = 1e-2, help = 'Please choose the weight decay')
-    parser.add_argument('--decay', type = float, default = 0.99, help='Please choose the decay') # 0.99 a bit smoother loss and perplexity (actually does not differ much) but reconstructions are near identical
     parser.add_argument('--seed', type = int, default = 0, help='Please choose the seed')
     parser.add_argument('--patience', type = int, default = 5, help='Please choose the patience')
     parser.add_argument('--dev', action = 'store_true', help = 'Please choose whether to use development mode or not')
@@ -97,12 +96,12 @@ def main(rank, world_size):
 
     vocab, merges = load_vocab_and_merges(f'./data/{args.tokenizer_check}.pkl')
 
-    directory_path = f'./runs/{args.seed}/{args.model}_{args.dataset}_{args.lr}_{args.beta1}_{args.beta2}_{args.eps}_{args.weight_decay}_{args.warmup}_{args.batch_size}_{args.epochs}_{args.decay}_{args.num_merges}_{args.pad_to_max}_{args.toy}'
+    directory_path = f'./runs/{args.seed}/{args.model}_{args.dataset}_{args.lr}_{args.beta1}_{args.beta2}_{args.eps}_{args.weight_decay}_{args.warmup}_{args.batch_size}_{args.epochs}_{args.num_merges}_{args.pad_to_max}_{args.toy}'
 
     if args.log:
         wandb.init(
             project = 'bpe-trans',
-            name = f'{args.seed}_{args.model}_{args.dataset}_{args.lr}_{args.beta1}_{args.beta2}_{args.eps}_{args.weight_decay}_{args.warmup}_{args.batch_size}_{args.epochs}_{args.decay}_{args.num_merges}_{args.toy}',
+            name = f'{args.seed}_{args.model}_{args.dataset}_{args.lr}_{args.beta1}_{args.beta2}_{args.eps}_{args.weight_decay}_{args.warmup}_{args.batch_size}_{args.epochs}_{args.num_merges}_{args.toy}',
             config = {
                 'model' : args.model,
                 'dataset' : args.dataset,
@@ -114,7 +113,6 @@ def main(rank, world_size):
                 'warmup' : args.warmup,
                 'batch_size' : args.batch_size,
                 'epochs' : args.epochs,
-                'decay' : args.decay,
                 'seed' : args.seed,
                 'vocab size' : args.num_merges,
                 'pad_to_max' : args.pad_to_max,
