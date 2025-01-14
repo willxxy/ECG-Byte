@@ -32,7 +32,7 @@ def trainer(model, dataloader, optimizer, args, epoch, directory_path):
             if args.log:
                 wandb.log({"train_step_loss": loss.item(), "epoch": epoch, "train_step": step})
             
-            if ((step + 1) % 50 == 0) and args.toy != True:
+            if ((step + 1) % 50000 == 0) and args.toy != True:
                 if args.dis:
                     train_model_state_dict = model.module.state_dict()
                 else:
