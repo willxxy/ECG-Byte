@@ -311,6 +311,19 @@ We encountered some issues during development of ECG-Byte and hope to contribute
 
 4. Nan values during preprocessing - We noticed that the MIMIC-IV ECG dataset has many nan values during preprocessing so we workaround this by skipping them.
 
+5. When sampling ECGs (`ecg_byte/preprocess/sample_ecg.py`, we currently have the following configurations for the number of threads:
+
+```
+os.environ['OPENBLAS_NUM_THREADS'] = '4'
+os.environ['MKL_NUM_THREADS'] = '4'
+os.environ['VECLIB_MAXIMUM_THREADS'] = '4'
+os.environ['NUMEXPR_NUM_THREADS'] = '4'
+```
+
+We noticed that on some machines under computational constraints this number is too high when largely launching the PCA analysis, thus resulting in a crash. 
+In this case, simply reduce the maximum number of threads for each os.environ to either 1 or 2.
+Reducing this number should solve the problem, however, if you continue to run into crashes please feel free to report an issue!
+
 ## Acknowledgements <a name="ack"></a>
 This work is done in collaboration with the Mario Lemieux Center for Heart Rhythm Care at Allegheny General Hospital. 
 We thank Wenhao Ding, Haohong Lin, Shiqi Liu, and Hyoeun Kang for the valuable discussions.
