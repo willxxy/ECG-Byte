@@ -132,7 +132,7 @@ python mapping_mimic_iv_ecg_samples.py ecgqa/mimic-iv-ecg \
 
 ### Pretrain MIMIC dataset curated by [ECG-Chat Zhao et al.](https://github.com/YubaoZhao/ECG-Chat)
 
-3. Next create a `data/ecg_chat_data` directory and download the `pretrain_mimic.json` file from this [dropbox link](https://www.dropbox.com/scl/fo/ccq5dxmdgg4shf02yjn8c/ANOQ1Hzj4KwHqa1b9r80uzc?rlkey=teysp3v6hg6o9uko2i4zbbjpn&e=1&st=exu3i9oo&dl=0).
+1. Next create a `data/ecg_chat_data` directory and download the `pretrain_mimic.json` file from this [dropbox link](https://www.dropbox.com/scl/fo/ccq5dxmdgg4shf02yjn8c/ANOQ1Hzj4KwHqa1b9r80uzc?rlkey=teysp3v6hg6o9uko2i4zbbjpn&e=1&st=exu3i9oo&dl=0).
 
 Once you are finished with these steps, it's time to preprocess the data!
 
