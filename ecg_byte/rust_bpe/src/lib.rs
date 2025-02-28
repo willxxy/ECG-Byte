@@ -193,7 +193,7 @@ fn encode_text(text: &str, merges: Vec<(Vec<u32>, u32)>) -> PyResult<Vec<u32>> {
 }
 
 #[pymodule]
-fn bpe(_py: Python, m: &PyModule) -> PyResult<()> {
+fn rust_bpe(_py: Python, m: &PyModule) -> PyResult<()> {
     m.add_function(wrap_pyfunction!(byte_pair_encoding, m)?)?;
     m.add_function(wrap_pyfunction!(encode_text, m)?)?;
     Ok(())
