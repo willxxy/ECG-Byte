@@ -6,6 +6,7 @@
   <img src="./assets/pipeline.png" alt="Our pipeline.">
 </div>
 
+### Checkout [ECG-Bench](https://github.com/willxxy/ECG-Bench), which supports ECG-Byte, and many other Electrocardiogram-Language Models!
 
 ## Table of Contents
 1. [Overview](#overview)
