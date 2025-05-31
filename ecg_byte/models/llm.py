@@ -31,7 +31,6 @@ class LLM(nn.Module):
                 max_new_tokens=128,
                 pad_token_id=tokenizer.pad_token_id,
                 eos_token_id=tokenizer.eos_token_id,
-                do_sample=True,
                 use_cache=True,
             )
         decoded_text = tokenizer.batch_decode(generated_ids[:, input_len:], skip_special_tokens=True, clean_up_tokenization_spaces=False)[0]
@@ -100,7 +99,6 @@ class CLIP_LLM(nn.Module):
             max_new_tokens=128,
             pad_token_id=tokenizer.pad_token_id,
             eos_token_id=tokenizer.eos_token_id,
-            do_sample=True,
             use_cache=True,
         )
         # Compute the length of the input to slice the generated tokens correctly
@@ -173,7 +171,6 @@ class VIT_LLM(nn.Module):
             max_new_tokens=128,
             pad_token_id=tokenizer.pad_token_id,
             eos_token_id=tokenizer.eos_token_id,
-            do_sample=True,
             use_cache=True,
         )
         # Compute the length of the input to slice the generated tokens correctly
@@ -262,7 +259,6 @@ class CLIP_VIT_LLM(nn.Module):
             max_new_tokens=128,
             pad_token_id=tokenizer.pad_token_id,
             eos_token_id=tokenizer.eos_token_id,
-            do_sample=True,
             use_cache=True,
         )
         
@@ -330,7 +326,6 @@ class ResNet_LLM(nn.Module):
             max_new_tokens=128,
             pad_token_id=tokenizer.pad_token_id,
             eos_token_id=tokenizer.eos_token_id,
-            do_sample=True,
             use_cache=True,
         )
         # Compute the length of the input to slice the generated tokens correctly
