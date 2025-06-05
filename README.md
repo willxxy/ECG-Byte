@@ -343,7 +343,7 @@ torch.backends.cudnn.benchmark = False
 torch.use_deterministic_algorithms(True)
 ```
 
-And in the bash launch script, set the cuBLAS workspace variable `export CUBLAS_WORKSPACE_CONFIG=":16:8"`. 
+And in the bash launch script, set the cuBLAS workspace variable `export CUBLAS_WORKSPACE_CONFIG=":4096:8"`. 
 
 Note that these settings can slow training/inference and may fall back to less-efficient kernels. Additionally, sampling (do_sample=True) will still produce different outputs unless you reseed (e.g., torch.manual_seed(...)) immediately before each generation call or switch to deterministic decoding strategies such as greedy or beam search. Therefore, we suggest to turn this off.
 
